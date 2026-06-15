@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agricultura Familiar do Futuro</title>
+<title>Agricultura Familiar Futurista</title>
 
 <style>
 *{
@@ -18,110 +18,133 @@ body{
     display:flex;
     justify-content:center;
     align-items:center;
-    text-align:center;
     color:white;
     overflow:hidden;
 }
 
-/* Imagem de fundo */
+/* FUNDO */
 .background{
     position:fixed;
-    top:0;
-    left:0;
     width:100%;
     height:100%;
     background:
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
-    url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
+    url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1920&q=80');
     background-size:cover;
     background-position:center;
     z-index:-2;
 }
 
-/* Efeito futurista */
+/* efeito neon suave */
 .background::after{
     content:'';
     position:absolute;
     width:100%;
     height:100%;
-    background:
-    radial-gradient(circle at center,
-    rgba(0,255,150,0.15),
-    transparent 70%);
-    animation:pulse 6s infinite;
+    background: radial-gradient(circle at center, rgba(0,255,140,0.15), transparent 70%);
+    animation:pulse 7s infinite;
 }
 
 @keyframes pulse{
     0%{transform:scale(1);}
-    50%{transform:scale(1.1);}
+    50%{transform:scale(1.15);}
     100%{transform:scale(1);}
 }
 
+/* CONTAINER */
 .container{
     width:90%;
-    max-width:800px;
-    padding:40px;
+    max-width:900px;
+    padding:35px;
     background:rgba(255,255,255,0.08);
-    backdrop-filter:blur(15px);
+    backdrop-filter: blur(15px);
     border:1px solid rgba(255,255,255,0.2);
-    border-radius:25px;
-    box-shadow:0 0 30px rgba(0,255,170,0.3);
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,255,170,0.25);
+    text-align:center;
 }
 
+/* TÍTULO */
 h1{
-    font-size:3rem;
+    font-size:2.8rem;
+    color:#00ffb3;
     margin-bottom:20px;
-    text-transform:uppercase;
     letter-spacing:2px;
-    color:#00ffae;
+    text-transform:uppercase;
 }
 
-p{
-    font-size:1.2rem;
-    line-height:1.8;
-    margin-bottom:30px;
+/* TEXTOS */
+.texto{
+    text-align:left;
+    margin:20px 0;
+    padding:15px;
+    border-left:3px solid #00ffb3;
+    background:rgba(0,0,0,0.25);
+    border-radius:10px;
+    transition:0.3s;
 }
 
+.texto:hover{
+    transform:translateX(5px);
+    background:rgba(0,255,179,0.08);
+}
+
+/* BOTÃO */
 .btn{
     display:inline-block;
+    margin-top:25px;
     padding:15px 35px;
+    border-radius:50px;
     text-decoration:none;
     color:white;
     font-weight:bold;
-    border-radius:50px;
-    background:linear-gradient(45deg,#00ffae,#0088ff);
+    background:linear-gradient(45deg,#00ffb3,#0077ff);
+    box-shadow:0 0 20px rgba(0,255,179,0.5);
     transition:0.4s;
-    box-shadow:0 0 20px rgba(0,255,174,0.5);
 }
 
 .btn:hover{
-    transform:translateY(-5px) scale(1.05);
-    box-shadow:0 0 35px rgba(0,255,174,0.9);
-}
-
-.btn:active{
-    transform:scale(0.95);
+    transform:scale(1.08);
+    box-shadow:0 0 35px rgba(0,255,179,0.9);
 }
 </style>
+
 </head>
+
 <body>
 
 <div class="background"></div>
 
 <div class="container">
+
     <h1>Agricultura Familiar</h1>
 
-    <p>
-        A agricultura familiar é a base da produção sustentável,
-        fortalecendo comunidades rurais, preservando tradições
-        e impulsionando a inovação no campo para um futuro mais verde.
-    </p>
+    <!-- TEXTO 1 -->
+    <div class="texto">
+        🌱 <b>Importância social:</b>  
+        A agricultura familiar é responsável por grande parte dos alimentos que chegam à mesa dos brasileiros, 
+        garantindo diversidade, qualidade e segurança alimentar para a população.
+    </div>
 
-    <a class="btn"
-       href="https://www.gov.br/mda/pt-br"
-       target="_blank">
-       Saiba Mais
+    <!-- TEXTO 2 -->
+    <div class="texto">
+        🚜 <b>Sustentabilidade:</b>  
+        Esse modelo de produção respeita o meio ambiente, utiliza práticas sustentáveis, preserva o solo e 
+        contribui para a redução do impacto ambiental no campo.
+    </div>
+
+    <!-- TEXTO 3 -->
+    <div class="texto">
+        🌾 <b>Economia e desenvolvimento:</b>  
+        A agricultura familiar movimenta economias locais, gera empregos no campo e fortalece pequenas comunidades rurais,
+        promovendo desenvolvimento regional.
+    </div>
+
+    <!-- BOTÃO -->
+    <a class="btn" href="https://www.gov.br/mda/pt-br" target="_blank">
+        Acessar Mais Informações
     </a>
+
 </div>
 
 </body>
