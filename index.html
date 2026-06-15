@@ -1,148 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A agricultura familiar é importante?</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f8f9fa;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agricultura Familiar do Futuro</title>
 
-        header {
-            background: linear-gradient(135deg, #2e7d32, #4caf50);
-            color: white;
-            text-align: center;
-            padding: 80px 20px;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+    overflow:hidden;
+}
 
-        .subtitle {
-            font-size: 1.4rem;
-            opacity: 0.95;
-        }
+/* Imagem de fundo */
+.background{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)),
+    url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920&q=80');
+    background-size:cover;
+    background-position:center;
+    z-index:-2;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+/* Efeito futurista */
+.background::after{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:
+    radial-gradient(circle at center,
+    rgba(0,255,150,0.15),
+    transparent 70%);
+    animation:pulse 6s infinite;
+}
 
-        section {
-            margin-bottom: 60px;
-        }
+@keyframes pulse{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+    100%{transform:scale(1);}
+}
 
-        h2 {
-            color: #2e7d32;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #4caf50;
-            padding-bottom: 10px;
-        }
+.container{
+    width:90%;
+    max-width:800px;
+    padding:40px;
+    background:rgba(255,255,255,0.08);
+    backdrop-filter:blur(15px);
+    border:1px solid rgba(255,255,255,0.2);
+    border-radius:25px;
+    box-shadow:0 0 30px rgba(0,255,170,0.3);
+}
 
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 25px;
-        }
+h1{
+    font-size:3rem;
+    margin-bottom:20px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:#00ffae;
+}
 
-        .highlight {
-            background: #e8f5e9;
-            padding: 20px;
-            border-left: 6px solid #4caf50;
-            border-radius: 5px;
-        }
+p{
+    font-size:1.2rem;
+    line-height:1.8;
+    margin-bottom:30px;
+}
 
-        footer {
-            background: #1b5e20;
-            color: white;
-            text-align: center;
-            padding: 30px;
-            margin-top: 50px;
-        }
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+    border-radius:50px;
+    background:linear-gradient(45deg,#00ffae,#0088ff);
+    transition:0.4s;
+    box-shadow:0 0 20px rgba(0,255,174,0.5);
+}
 
-        .btn {
-            display: inline-block;
-            background: #4caf50;
-            color: white;
-            padding: 12px 30px;
-            border-radius: 50px;
-            text-decoration: none;
-            margin-top: 20px;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 0 35px rgba(0,255,174,0.9);
+}
 
-        .btn:hover {
-            background: #388e3c;
-            transform: translateY(-3px);
-        }
-    </style>
+.btn:active{
+    transform:scale(0.95);
+}
+</style>
 </head>
 <body>
 
-    <header>
-        <h1>A agricultura familiar é importante?</h1>
-        <p class="subtitle">Sim, e muito mais do que você imagina!</p>
-    </header>
+<div class="background"></div>
 
-    <div class="container">
+<div class="container">
+    <h1>Agricultura Familiar</h1>
 
-        <section>
-            <div class="highlight">
-                <p><strong>A agricultura familiar representa cerca de 80% das propriedades rurais no Brasil</strong> e é responsável por grande parte dos alimentos que chegam à nossa mesa todos os dias.</p>
-            </div>
-        </section>
+    <p>
+        A agricultura familiar é a base da produção sustentável,
+        fortalecendo comunidades rurais, preservando tradições
+        e impulsionando a inovação no campo para um futuro mais verde.
+    </p>
 
-        <section>
-            <h2>Por que ela é tão importante?</h2>
-            
-            <div class="card">
-                <h3>🥕 1. Segurança Alimentar</h3>
-                <p>A agricultura familiar produz a maior parte dos alimentos básicos consumidos no Brasil, como feijão, arroz, mandioca, frutas, hortaliças e leite.</p>
-            </div>
-
-            <div class="card">
-                <h3>🌱 2. Preservação do Meio Ambiente</h3>
-                <p>Normalmente utiliza práticas mais sustentáveis, com menor uso de agrotóxicos e respeito maior à biodiversidade e ao solo.</p>
-            </div>
-
-            <div class="card">
-                <h3>👨‍👩‍👧‍👦 3. Geração de Emprego e Renda</h3>
-                <p>Mantém famílias no campo, gera emprego local e ajuda a fixar o homem e a mulher no meio rural.</p>
-            </div>
-
-            <div class="card">
-                <h3>🏛️ 4. Cultura e Identidade</h3>
-                <p>Preserva tradições, saberes ancestrais, variedades de sementes crioulas e a diversidade cultural do nosso país.</p>
-            </div>
-        </section>
-
-        <section style="text-align: center;">
-            <h2>Quer saber mais ou apoiar a agricultura familiar?</h2>
-            <a href="#" class="btn">COMO POSSO AJUDAR?</a>
-        </section>
-
-    </div>
-
-    <footer>
-        <p><strong>Agricultura Familiar:</strong> Alimentando o presente, cultivando o futuro.</p>
-        <p>&copy; 2026 - Seu Site</p>
-    </footer>
+    <a class="btn"
+       href="https://www.gov.br/mda/pt-br"
+       target="_blank">
+       Saiba Mais
+    </a>
+</div>
 
 </body>
 </html>
