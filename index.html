@@ -1,151 +1,66 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Agricultura Familiar Futurista</title>
-
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-body{
-    height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    color:white;
-    overflow:hidden;
-}
-
-/* FUNDO */
-.background{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)),
-    url('https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1920&q=80');
-    background-size:cover;
-    background-position:center;
-    z-index:-2;
-}
-
-/* efeito neon suave */
-.background::after{
-    content:'';
-    position:absolute;
-    width:100%;
-    height:100%;
-    background: radial-gradient(circle at center, rgba(0,255,140,0.15), transparent 70%);
-    animation:pulse 7s infinite;
-}
-
-@keyframes pulse{
-    0%{transform:scale(1);}
-    50%{transform:scale(1.15);}
-    100%{transform:scale(1);}
-}
-
-/* CONTAINER */
-.container{
-    width:90%;
-    max-width:900px;
-    padding:35px;
-    background:rgba(255,255,255,0.08);
-    backdrop-filter: blur(15px);
-    border:1px solid rgba(255,255,255,0.2);
-    border-radius:20px;
-    box-shadow:0 0 40px rgba(0,255,170,0.25);
-    text-align:center;
-}
-
-/* TÍTULO */
-h1{
-    font-size:2.8rem;
-    color:#00ffb3;
-    margin-bottom:20px;
-    letter-spacing:2px;
-    text-transform:uppercase;
-}
-
-/* TEXTOS */
-.texto{
-    text-align:left;
-    margin:20px 0;
-    padding:15px;
-    border-left:3px solid #00ffb3;
-    background:rgba(0,0,0,0.25);
-    border-radius:10px;
-    transition:0.3s;
-}
-
-.texto:hover{
-    transform:translateX(5px);
-    background:rgba(0,255,179,0.08);
-}
-
-/* BOTÃO */
-.btn{
-    display:inline-block;
-    margin-top:25px;
-    padding:15px 35px;
-    border-radius:50px;
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-    background:linear-gradient(45deg,#00ffb3,#0077ff);
-    box-shadow:0 0 20px rgba(0,255,179,0.5);
-    transition:0.4s;
-}
-
-.btn:hover{
-    transform:scale(1.08);
-    box-shadow:0 0 35px rgba(0,255,179,0.9);
-}
-</style>
-
+  <meta charset="UTF-8">
+  <title>Agricultura Familiar Futurista</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="background"></div>
+<header>
+  <h1 class="neon">🌱 Agricultura Familiar Futurista</h1>
+  <button onclick="toggleTheme()">🌙 / ☀️ Modo</button>
+</header>
 
-<div class="container">
+<nav>
+  <a href="#inicio">Início</a>
+  <a href="#sustentabilidade">Sustentabilidade</a>
+  <a href="#tecnologia">Tecnologia</a>
+  <a href="#comunidade">Comunidade</a>
+</nav>
 
-    <h1>Agricultura Familiar</h1>
+<!-- INÍCIO -->
+<section id="inicio" class="card">
+  <h2>Bem-vindo ao Futuro do Campo</h2>
+  <p>A agricultura familiar é a base da alimentação mundial e está evoluindo com tecnologia.</p>
+  <p>Este site mostra como o campo pode ser sustentável, moderno e conectado.</p>
+  <p>O futuro combina natureza, inovação e inteligência digital.</p>
+</section>
 
-    <!-- TEXTO 1 -->
-    <div class="texto">
-        🌱 <b>Importância social:</b>  
-        A agricultura familiar é responsável por grande parte dos alimentos que chegam à mesa dos brasileiros, 
-        garantindo diversidade, qualidade e segurança alimentar para a população.
-    </div>
+<!-- SUSTENTABILIDADE -->
+<section id="sustentabilidade" class="card">
+  <h2>🌱 Sustentabilidade</h2>
 
-    <!-- TEXTO 2 -->
-    <div class="texto">
-        🚜 <b>Sustentabilidade:</b>  
-        Esse modelo de produção respeita o meio ambiente, utiliza práticas sustentáveis, preserva o solo e 
-        contribui para a redução do impacto ambiental no campo.
-    </div>
+  <p>A agricultura familiar preserva o solo e reduz impactos ambientais.</p>
+  <p>O uso consciente da água e da terra garante produção saudável.</p>
+  <p>O futuro depende do equilíbrio entre produção e natureza.</p>
 
-    <!-- TEXTO 3 -->
-    <div class="texto">
-        🌾 <b>Economia e desenvolvimento:</b>  
-        A agricultura familiar movimenta economias locais, gera empregos no campo e fortalece pequenas comunidades rurais,
-        promovendo desenvolvimento regional.
-    </div>
+  <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0" alt="plantação">
+</section>
 
-    <!-- BOTÃO -->
-    <a class="btn" href="https://www.gov.br/mda/pt-br" target="_blank">
-        Acessar Mais Informações
-    </a>
+<!-- TECNOLOGIA -->
+<section id="tecnologia" class="card">
+  <h2>🤖 Tecnologia no Campo</h2>
 
-</div>
+  <p>Drones e sensores ajudam a monitorar plantações em tempo real.</p>
+  <p>A inteligência artificial melhora a produtividade agrícola.</p>
+  <p>O campo está se tornando cada vez mais digital e eficiente.</p>
 
+  <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="tecnologia agrícola">
+</section>
+
+<!-- COMUNIDADE -->
+<section id="comunidade" class="card">
+  <h2>🌍 Comunidade Rural</h2>
+
+  <p>A união entre famílias fortalece a economia local.</p>
+  <p>Cooperativas ajudam pequenos produtores a crescer.</p>
+  <p>A comunidade é essencial para um futuro sustentável.</p>
+
+  <img src="https://images.unsplash.com/photo-1505483531331-fc3cf89fd382" alt="comunidade rural">
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
