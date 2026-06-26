@@ -1,56 +1,176 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agricultura Familiar Futurista</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultura Familiar Sustentável</title>
+    <style>
+        /* Configurações Gerais da Seção */
+        .secao-informativa {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f5;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
 
+        /* Container Principal do Painel */
+        .painel-abas {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            max-width: 800px;
+            overflow: hidden;
+        }
+
+        /* Inputs de Rádio Ocultos para Controlar as Abas */
+        .painel-abas input[type="radio"] {
+            display: none;
+        }
+
+        /* Menu de Navegação das Abas */
+        .abas-nav {
+            display: flex;
+            background-color: #f9fbf9;
+            border-bottom: 2px solid #e2ebd5;
+        }
+
+        .aba-label {
+            flex: 1;
+            padding: 18px 10px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #556b2f; /* Verde oliva escuro */
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .aba-label:hover {
+            background-color: #edf3e8;
+            color: #2e8b57; /* Verde mar comum */
+        }
+
+        /* Área de Conteúdo dos Textos */
+        .conteudo-painel {
+            padding: 35px;
+            min-height: 200px;
+        }
+
+        .texto-conteudo {
+            display: none; /* Esconde todos os textos inicialmente */
+            line-height: 1.7;
+            color: #333333;
+            animation: suavizarEntrada 0.4s ease-in-out;
+        }
+
+        .texto-conteudo h2 {
+            color: #2e8b57;
+            margin-top: 0;
+            font-size: 1.6rem;
+            border-bottom: 2px solid #edf3e8;
+            padding-bottom: 10px;
+        }
+
+        .texto-conteudo p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Destaques visuais para dados importantes */
+        .destaque-dado {
+            background-color: #f0f7f4;
+            border-left: 4px solid #2e8b57;
+            padding: 12px 15px;
+            margin: 20px 0;
+            font-style: italic;
+            color: #444;
+        }
+
+        /* Lógica CSS para Ativar as Abas */
+        #aba1:checked ~ .abas-nav .aba-label[for="aba1"],
+        #aba2:checked ~ .abas-nav .aba-label[for="aba2"],
+        #aba3:checked ~ .abas-nav .aba-label[for="aba3"] {
+            color: #2e8b57;
+            background-color: #ffffff;
+            border-bottom: 3px solid #2e8b57;
+            font-weight: 700;
+        }
+
+        #aba1:checked ~ .conteudo-painel #conteudo-aba1,
+        #aba2:checked ~ .conteudo-painel #conteudo-aba2,
+        #aba3:checked ~ .conteudo-painel #conteudo-aba3 {
+            display: block; /* Mostra apenas o texto ativo */
+        }
+
+        /* Animação de transição */
+        @keyframes suavizarEntrada {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsividade para Celulares */
+        @media (max-width: 600px) {
+            .abas-nav {
+                flex-direction: column;
+            }
+            .aba-label {
+                border-bottom: 1px solid #e2ebd5;
+                padding: 12px;
+            }
+            #aba1:checked ~ .abas-nav .aba-label[for="aba1"],
+            #aba2:checked ~ .abas-nav .aba-label[for="aba2"],
+            #aba3:checked ~ .abas-nav .aba-label[for="aba3"] {
+                border-bottom: 1px solid #2e8b57;
+                border-left: 4px solid #2e8b57;
+            }
+        }
+    </style>
+</head>
 <body>
 
-<header>
-  <h1 class="neon">🌱 Agricultura Familiar Futurista</h1>
-  <button onclick="toggleTheme()">🌙 / ☀️ Modo</button>
-</header>
+    <section class="secao-informativa">
+        <div class="painel-abas">
+            <input type="radio" id="aba1" name="abas-grupo" checked>
+            <input type="radio" id="aba2" name="abas-grupo">
+            <input type="radio" id="aba3" name="abas-grupo">
 
-<nav>
-  <a href="#inicio">Início</a>
-  <a href="#sustentabilidade">Sustentabilidade</a>
-  <a href="#tecnologia">Tecnologia</a>
-</nav>
+            <nav class="abas-nav">
+                <label for="aba1" class="aba-label">O que é e Importância</label>
+                <label for="aba2" class="aba-label">Sustentabilidade</label>
+                <label for="aba3" class="aba-label">Desafios e Futuro</label>
+            </nav>
 
-<!-- INÍCIO -->
-<section id="inicio" class="card">
-  <h2>Bem-vindo ao Futuro do Campo</h2>
+            <div class="conteudo-painel">
+                
+                <div id="conteudo-aba1" class="texto-conteudo">
+                    <h2>Alimentando a Sociedade</h2>
+                    <p>A agricultura familiar é o pilar fundamental da segurança alimentar global. Ao contrário dos grandes latifúndios focados em monoculturas para exportação, as pequenas propriedades familiares diversificam sua produção, trazendo riqueza nutricional para a mesa da população local.</p>
+                    <div class="destaque-dado">
+                        Você sabia? Cerca de 70% dos alimentos consumidos diariamente nos lares brasileiros vêm de pequenas propriedades geridas por famílias.
+                    </div>
+                    <p>Além disso, o setor desempenha um papel vital na economia interna, gerando a maior parte dos empregos no campo e contendo o êxodo rural através da sucessão familiar.</p>
+                </div>
 
-  <p>A agricultura familiar é uma das bases mais importantes da produção de alimentos no mundo.</p>
-  <p>Ela conecta pequenas propriedades rurais com tecnologia moderna e sustentável.</p>
-  <p>No futuro, ela será ainda mais eficiente, digital e sustentável.</p>
-</section>
+                <div id="conteudo-aba2" class="texto-conteudo">
+                    <h2>Práticas Verdes e Biodiversidade</h2>
+                    <p>A relação dos pequenos agricultores com a terra costuma ser baseada no respeito ao ciclo natural. Práticas como a agroecologia, a rotação de culturas e a preservação de nascentes são muito mais frequentes no modelo familiar do que na agricultura em larga escala.</p>
+                    <p>Esse manejo consciente ajuda a reduzir o uso de pesticidas químicos e fertilizantes sintéticos, protegendo os polinizadores locais (como abelhas) e mantendo a fertilidade do solo viva para as próximas gerações.</p>
+                </div>
 
-<!-- SUSTENTABILIDADE -->
-<section id="sustentabilidade" class="card">
-  <h2>🌱 Sustentabilidade na Agricultura</h2>
+                <div id="conteudo-aba3" class="texto-conteudo">
+                    <h2>Superando Obstáculos Tecnológicos</h2>
+                    <p>Apesar de sua relevância, a agricultura familiar enfrenta barreiras críticas. A falta de acesso a crédito bancário facilitado, a ausência de infraestrutura para transporte e o acesso limitado às novas tecnologias agrícolas dificultam a competição justa no mercado.</p>
+                    <p>O futuro do setor depende diretamente do incentivo a políticas públicas eficazes e do cooperativismo. Quando pequenos produtores se unem em cooperativas, eles conseguem negociar melhores preços e investir em maquinários modernos e sustentáveis.</p>
+                </div>
 
-  <p>A agricultura familiar preserva o meio ambiente com práticas naturais.</p>
-  <p>O uso consciente da água e do solo garante equilíbrio ecológico.</p>
-  <p>Isso ajuda a manter a biodiversidade e a saúde do planeta.</p>
+            </div>
+        </div>
+    </section>
 
-  <img src="https://images.unsplash.com/photo-1461354464878-ad92f492a5a0" alt="plantação">
-</section>
-
-<!-- TECNOLOGIA -->
-<section id="tecnologia" class="card">
-  <h2>🤖 Tecnologia no Campo</h2>
-
-  <p>Drones ajudam a monitorar plantações com precisão.</p>
-  <p>Sensores inteligentes melhoram a produtividade agrícola.</p>
-  <p>A inteligência artificial está transformando o campo moderno.</p>
-
-  <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="tecnologia agrícola">
-</section>
-
-<script src="script.js"></script>
 </body>
 </html>
