@@ -37,4 +37,77 @@
            ESTILOS GERAIS
            ========================================================================== */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva,
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--texto-principal);
+            margin: 0;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .painel {
+            background-color: var(--bg-painel);
+            border: 1px solid var(--borda);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: var(--texto-titulo);
+        }
+
+        label {
+            color: var(--texto-labels);
+            font-weight: bold;
+        }
+
+        .destaque {
+            background-color: var(--box-destaque-bg);
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        /* Botão simples para testar o modo escuro via JavaScript depois */
+        .btn-toggle {
+            background-color: var(--texto-titulo);
+            color: var(--bg-painel);
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="painel">
+        <button class="btn-toggle" onclick="toggleTheme()">Alternar Modo</button>
+        
+        <h1>Agricultura Familiar</h1>
+        <p>A agricultura familiar é um modelo de produção essencial para a segurança alimentar do país, baseando-se no trabalho de membros da mesma família.</p>
+        
+        <div class="destaque">
+            <label>Importância:</label>
+            <p>Produz grande parte dos alimentos que chegam à mesa da população, valorizando a sustentabilidade e o manejo da terra de forma consciente.</p>
+        </div>
+    </div>
+
+    <script>
+        // Função simples para testar a troca de tema (Claro / Escuro)
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.hasAttribute('data-theme')) {
+                html.removeAttribute('data-theme');
+            } else {
+                html.setAttribute('data-theme', 'dark');
+            }
+        }
+    </script>
+
+</body>
+</html>
